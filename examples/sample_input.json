@@ -3,70 +3,290 @@
     {
       "day": 1,
       "category": "Non-Fiction",
-      "lexile": "500L–530L",
-      "word_count": "180–190",
-      "title": "Learning from Spending Mistakes",
+      "title": "Dylan and the Robot Toy",
+      "instructions": "Read the passage and answer the questions.",
       "passage": [
-        "Everyone makes mistakes when spending money, but the important thing is to learn from them. Dylan once bought an expensive toy that broke after a week. He felt disappointed and realized he had not checked if it was well made.",
-        "Making mistakes helps us think before buying next time. Adults and children both learn that advertisements can make products look better than they really are. After that day, Dylan began to ask more questions about products and waited before deciding to buy.",
-        "Learning from mistakes turns bad experiences into valuable lessons. Every mistake can teach us how to spend money with more care, understanding, and responsibility. People who learn from their spending mistakes become smarter shoppers over time."
+        "Dylan saved his allowance for weeks, and he finally bought a shiny robot toy. It looked strong in the store, and the box promised \"Super Power Moves.\" Dylan felt proud, so he opened it right away. For three days he played with it after dinner, and he even showed it to his cousin. But on the fourth day, the robot's arm snapped when Dylan pressed a button. Dylan felt upset, and he wished he had checked the toy more carefully.",
+        "His mom said mistakes can teach smart habits. Dylan learned that ads and boxes can make products look better than they really are. Next time, he planned to look at the toy closely, and he would ask questions before paying. He also decided to compare prices and read simple reviews with an adult. Dylan still liked fun toys, but he wanted to spend money wisely. After that, he waited a day before buying something, so he could think calmly and choose well."
       ],
       "questions": [
-        {
-          "prompt": "What lesson did Dylan learn after buying a toy that broke in a week?",
-          "options": [
-            "Expensive items are always better.",
-            "He should check quality before spending.",
-            "Toys do not need to last long.",
-            "It is fine to waste money on fun things."
-          ]
-        },
-        {
-          "prompt": "Which of the following is NOT true according to the passage?",
-          "options": [
-            "Dylan's toy broke quickly after he bought it.",
-            "Mistakes can teach people to think before buying.",
-            "Advertisements always show products honestly.",
-            "Adults and children can both learn from mistakes."
-          ]
-        }
+        { "prompt": "What did Dylan buy?", "options": ["A. A robot toy", "B. A video game", "C. A bicycle", "D. A book"] },
+        { "prompt": "Which is NOT something Dylan decided to do next time?", "options": ["A. Ask questions before paying", "B. Compare prices", "C. Read reviews with an adult", "D. Buy the first thing he sees"] },
+        { "prompt": "Why did Dylan feel upset?", "options": ["A. The store was closed", "B. The robot's arm snapped", "C. His cousin took the toy", "D. He lost his money"] },
+        { "prompt": "What will Dylan most likely do before his next purchase?", "options": ["A. Hide his money", "B. Check the item carefully", "C. Stop buying toys forever", "D. Never listen to adults"] },
+        { "prompt": "The word \"wisely\" means—", "options": ["A. in a loud way", "B. in a smart way", "C. in a sleepy way", "D. in a fast way"] }
       ]
     },
     {
       "day": 1,
       "category": "Vocabulary",
-      "title": "Vocabulary",
-      "subtitle": "Instructions:",
-      "instructions": "Choose the word from the box that best completes the sentence.",
+      "title": "Section 2: Vocabulary",
+      "instructions": "Use a word from the box to complete each sentence.",
       "word_box": {
         "title": "WORD BOX",
-        "words": ["audible", "consume", "glide", "origin", "prevent", "punctuate", "representative", "scorn", "stout", "woe"]
+        "words": ["allowance", "shiny", "promise", "snapped", "upset", "carefully", "compare", "review", "wisely", "purchase"]
       },
       "questions": [
-        {
-          "prompt": "The bird began to ______ across the sky as the wind blew gently.",
-          "options": []
-        },
-        {
-          "prompt": "Please don't ______ him just because he made a small mistake.",
-          "options": []
-        }
+        { "prompt": "Dylan saved his ______ each week.", "options": [] },
+        { "prompt": "The toy looked ______ under the store lights.", "options": [] },
+        { "prompt": "The box made a big ______ about the toy.", "options": [] },
+        { "prompt": "The robot's arm ______ when he pressed the button.", "options": [] },
+        { "prompt": "Dylan felt ______ after it broke.", "options": [] },
+        { "prompt": "He wanted to check items ______ next time.", "options": [] },
+        { "prompt": "He planned to ______ prices before buying.", "options": [] },
+        { "prompt": "Dylan read a ______ with an adult.", "options": [] },
+        { "prompt": "He wanted to spend ______ and not rush.", "options": [] },
+        { "prompt": "A ______ is something you buy.", "options": [] }
+      ]
+    },
+    {
+      "day": 1,
+      "category": "Grammar",
+      "title": "Section 3: Grammar (Simple Past)",
+      "instructions": "Choose the correct past-tense form to complete each sentence.",
+      "questions": [
+        { "prompt": "Yesterday, I ___ my homework after dinner.", "options": ["A. do", "B. did", "C. doing", "D. does"] },
+        { "prompt": "Mom ___ to the store last night.", "options": ["A. goes", "B. went", "C. go", "D. going"] },
+        { "prompt": "We ___ not play outside because it rained.", "options": ["A. did", "B. do", "C. did not", "D. does not"] },
+        { "prompt": "My brother ___ a sandwich for lunch.", "options": ["A. eat", "B. ate", "C. eaten", "D. eats"] },
+        { "prompt": "Did you ___ the movie on Saturday?", "options": ["A. watched", "B. watch", "C. watching", "D. watches"] },
+        { "prompt": "The baby ___ asleep quickly.", "options": ["A. fall", "B. fell", "C. falling", "D. falls"] },
+        { "prompt": "I ___ my pencil, so I borrowed one.", "options": ["A. lost", "B. lose", "C. losing", "D. loses"] },
+        { "prompt": "She did not ___ her room yesterday.", "options": ["A. cleaned", "B. clean", "C. cleaning", "D. cleans"] },
+        { "prompt": "Dad ___ a funny story at breakfast.", "options": ["A. tells", "B. told", "C. telling", "D. tell"] },
+        { "prompt": "Did they ___ to school on time?", "options": ["A. came", "B. come", "C. coming", "D. comes"] }
+      ]
+    },
+    {
+      "day": 2,
+      "category": "Non-Fiction",
+      "title": "The Kim Family Budget Talk",
+      "instructions": "Read the passage and answer the questions.",
+      "passage": [
+        "The Kim family met every Sunday afternoon to plan how to use their money. They called it their \"family budget talk,\" and everyone had a turn to speak. Mr. Kim listed needs like groceries and bus cards. Mrs. Kim talked about saving for a winter trip. The children shared ideas too, but they had to explain why something mattered.",
+        "One week, the kids wanted to eat out, and they also wanted new art supplies. The family did not say yes right away. Instead, they checked their plan and talked calmly. They asked, \"Do we need this now, or can it wait?\" In the end, they chose the art supplies, and they cooked dinner at home. The kids felt proud because they helped make a fair choice.",
+        "Planning together taught the family patience and teamwork. It also helped them feel connected, because they listened to each other and made one plan. When families share decisions, they often build trust, and they learn how to spend with care."
+      ],
+      "questions": [
+        { "prompt": "When did the Kim family meet to plan money?", "options": ["A. Every Sunday afternoon", "B. Every Monday morning", "C. Every Friday night", "D. Every day after school"] },
+        { "prompt": "Which is NOT mentioned as a need?", "options": ["A. Groceries", "B. Bus cards", "C. Winter trip savings", "D. A new pet turtle"] },
+        { "prompt": "Why did they cook dinner at home?", "options": ["A. They forgot to eat out", "B. They chose art supplies instead", "C. The restaurant was closed", "D. They wanted to be late"] },
+        { "prompt": "What kind of family is the Kim family?", "options": ["A. They ignore each other", "B. They make choices together", "C. They never save money", "D. They never talk"] },
+        { "prompt": "\"Connected\" most nearly means—", "options": ["A. close and joined", "B. tired and sleepy", "C. loud and busy", "D. angry and upset"] }
+      ]
+    },
+    {
+      "day": 2,
+      "category": "Vocabulary",
+      "title": "Section 2: Vocabulary",
+      "instructions": "Use a word from the box to complete each sentence.",
+      "word_box": {
+        "title": "WORD BOX",
+        "words": ["budget", "plan", "need", "save", "opinion", "decide", "fair", "patiently", "connected", "trust"]
+      },
+      "questions": [
+        { "prompt": "A ______ helps a family know how to use money.", "options": [] },
+        { "prompt": "A ______ is an idea for what to do next.", "options": [] },
+        { "prompt": "Food is something we ______ every week.", "options": [] },
+        { "prompt": "When you ______, you keep money for later.", "options": [] },
+        { "prompt": "Your ______ is what you think.", "options": [] },
+        { "prompt": "Families ______ together when choices are hard.", "options": [] },
+        { "prompt": "A ______ choice is not mean or selfish.", "options": [] },
+        { "prompt": "We should wait ______ and not rush.", "options": [] },
+        { "prompt": "Talking and listening keeps families ______.", "options": [] },
+        { "prompt": "When people keep promises, they build ______.", "options": [] }
       ]
     },
     {
       "day": 2,
       "category": "Grammar",
-      "title": "Grammar: Past Tense",
-      "instructions": "Read the sentences and choose the right answer.",
+      "title": "Section 3: Grammar (Simple Past)",
+      "instructions": "Choose the correct past-tense form to complete each sentence.",
       "questions": [
-        {
-          "prompt": "Grace _______ a beautiful picture yesterday.",
-          "options": ["draw", "drew", "drawing"]
-        },
-        {
-          "prompt": "The birds _______ away when it started raining.",
-          "options": ["fly", "flew", "flying"]
-        }
+        { "prompt": "We ___ about our weekend yesterday.", "options": ["A. talk", "B. talked", "C. talking", "D. talks"] },
+        { "prompt": "My sister ___ a picture for Grandma.", "options": ["A. draw", "B. drew", "C. drawing", "D. draws"] },
+        { "prompt": "I did not ___ my snack at school.", "options": ["A. ate", "B. eat", "C. eating", "D. eats"] },
+        { "prompt": "Did he ___ his jacket this morning?", "options": ["A. wore", "B. wear", "C. wearing", "D. wears"] },
+        { "prompt": "The class ___ a new song.", "options": ["A. learn", "B. learned", "C. learning", "D. learns"] },
+        { "prompt": "Dad ___ the door quietly.", "options": ["A. open", "B. opened", "C. opening", "D. opens"] },
+        { "prompt": "We ___ home early last night.", "options": ["A. come", "B. came", "C. coming", "D. comes"] },
+        { "prompt": "She did not ___ to the park.", "options": ["A. went", "B. go", "C. going", "D. goes"] },
+        { "prompt": "The dog ___ water after the walk.", "options": ["A. drink", "B. drank", "C. drinking", "D. drinks"] },
+        { "prompt": "Did they ___ you a gift?", "options": ["A. gave", "B. give", "C. giving", "D. gives"] }
+      ]
+    },
+    {
+      "day": 3,
+      "category": "Non-Fiction",
+      "title": "The No-Spend Challenge",
+      "instructions": "Read the passage and answer the questions.",
+      "passage": [
+        "One teacher gave her class a challenge: \"Spend no money for one week.\" At first, the students worried, because buying snacks and toys felt normal. Still, they agreed to try, and they made a list of free ideas. Lily baked cookies at home instead of buying candy. Reggie invited friends over, and they played board games. Another group made paper airplanes and held a small contest.",
+        "After a few days, the students noticed something surprising. They laughed more, and they talked more, because they were sharing time instead of shopping. On Friday, the teacher asked them to reflect. Many students said they saved more money than they expected, but they also felt happier than before. They learned that fun does not always need a price tag.",
+        "The class also learned a new habit: pause before spending. When they wanted something, they asked, \"Do I truly need this?\" The challenge ended, but the lesson stayed. The students discovered that people and creativity can bring real joy."
+      ],
+      "questions": [
+        { "prompt": "What was the class challenge?", "options": ["A. Spend no money for one week", "B. Run a mile every day", "C. Read ten books in one day", "D. Clean the whole school"] },
+        { "prompt": "Which is NOT an activity mentioned?", "options": ["A. Baking cookies", "B. Playing board games", "C. Making paper airplanes", "D. Buying new video games"] },
+        { "prompt": "What happened because they stopped shopping?", "options": ["A. They talked and laughed more", "B. They forgot their homework", "C. They became angry every day", "D. They stopped seeing friends"] },
+        { "prompt": "Why did the teacher ask them to reflect on Friday?", "options": ["A. To help them think about what they learned", "B. To make them buy snacks", "C. To punish the class", "D. To end school early"] },
+        { "prompt": "\"Reflect\" most nearly means—", "options": ["A. run quickly", "B. think back carefully", "C. shout loudly", "D. fall asleep"] }
+      ]
+    },
+    {
+      "day": 3,
+      "category": "Vocabulary",
+      "title": "Section 2: Vocabulary",
+      "instructions": "Use a word from the box to complete each sentence.",
+      "word_box": {
+        "title": "WORD BOX",
+        "words": ["challenge", "worried", "list", "free", "contest", "surprising", "expected", "price tag", "pause", "creativity"]
+      },
+      "questions": [
+        { "prompt": "A ______ is a task that can be hard but helpful.", "options": [] },
+        { "prompt": "The students felt ______ at first.", "options": [] },
+        { "prompt": "They made a ______ of ideas.", "options": [] },
+        { "prompt": "They chose ______ activities that cost no money.", "options": [] },
+        { "prompt": "A paper airplane ______ is a friendly competition.", "options": [] },
+        { "prompt": "It was ______ that they felt happier.", "options": [] },
+        { "prompt": "They saved more than they ______.", "options": [] },
+        { "prompt": "A ______ shows how much something costs.", "options": [] },
+        { "prompt": "They learned to ______ before spending.", "options": [] },
+        { "prompt": "New ideas and making things show ______.", "options": [] }
+      ]
+    },
+    {
+      "day": 3,
+      "category": "Grammar",
+      "title": "Section 3: Grammar (Simple Past)",
+      "instructions": "Choose the correct past-tense form to complete each sentence.",
+      "questions": [
+        { "prompt": "Yesterday, we ___ a game at home.", "options": ["A. play", "B. played", "C. playing", "D. plays"] },
+        { "prompt": "Lily ___ cookies for her friends.", "options": ["A. bake", "B. baked", "C. baking", "D. bakes"] },
+        { "prompt": "Did you ___ your room last night?", "options": ["A. cleaned", "B. clean", "C. cleaning", "D. cleans"] },
+        { "prompt": "We did not ___ any money this week.", "options": ["A. spent", "B. spend", "C. spending", "D. spends"] },
+        { "prompt": "The teacher ___ a question on Friday.", "options": ["A. ask", "B. asked", "C. asking", "D. asks"] },
+        { "prompt": "Reggie ___ his friends to his house.", "options": ["A. invite", "B. invited", "C. inviting", "D. invites"] },
+        { "prompt": "The students ___ happier than before.", "options": ["A. feel", "B. felt", "C. feeling", "D. feels"] },
+        { "prompt": "Did she ___ the book yesterday?", "options": ["A. read", "B. reads", "C. reading", "D. reader"] },
+        { "prompt": "I ___ my lunch at home, so I was hungry.", "options": ["A. left", "B. leave", "C. leaving", "D. leaves"] },
+        { "prompt": "They did not ___ late to class.", "options": ["A. arrived", "B. arrive", "C. arriving", "D. arrives"] }
+      ]
+    },
+    {
+      "day": 4,
+      "category": "Non-Fiction",
+      "title": "Learning the Value of Money",
+      "instructions": "Read the passage and answer the questions.",
+      "passage": [
+        "Money has value because people agree to use it to buy goods and services. Long ago, people traded things like eggs, rice, or cloth. Today, many people use coins, bills, or cards instead. Understanding the value of a dollar helps children see how time, effort, and choices connect.",
+        "Grace learned this when she earned five dollars by washing her neighbor's car. The work was not quick, but she kept going, and she finished carefully. Later, Grace spent the five dollars on ice cream for her family. She watched everyone smile, and she felt proud. Grace realized something important: money is not only for buying things for yourself. It can also be for sharing and creating happiness.",
+        "After that day, Grace respected money more. She asked herself, \"How long did I work for this?\" She also started making smaller plans, like saving part of her money and spending part. When children understand value, they make thoughtful choices, and they appreciate what they have."
+      ],
+      "questions": [
+        { "prompt": "How did Grace earn five dollars?", "options": ["A. She washed a neighbor's car", "B. She sold a bicycle", "C. She found it on the ground", "D. She won a game"] },
+        { "prompt": "Which is NOT mentioned as an old way people traded?", "options": ["A. Eggs", "B. Rice", "C. Cloth", "D. Phones"] },
+        { "prompt": "Why did Grace feel proud after buying ice cream?", "options": ["A. She stole money", "B. She used her earnings to make her family happy", "C. She bought the biggest item", "D. She did not work at all"] },
+        { "prompt": "What will Grace most likely do next time she gets money?", "options": ["A. Spend all of it right away", "B. Make a plan to save and spend", "C. Hide it forever", "D. Throw it away"] },
+        { "prompt": "\"Appreciate\" most nearly means—", "options": ["A. laugh loudly", "B. value and feel thankful for", "C. forget quickly", "D. complain about"] }
+      ]
+    },
+    {
+      "day": 4,
+      "category": "Vocabulary",
+      "title": "Section 2: Vocabulary",
+      "instructions": "Use a word from the box to complete each sentence.",
+      "word_box": {
+        "title": "WORD BOX",
+        "words": ["value", "goods", "services", "trade", "effort", "earn", "respected", "sharing", "thoughtful", "appreciate"]
+      },
+      "questions": [
+        { "prompt": "________ means how important something is.", "options": [] },
+        { "prompt": "________ are items you can buy, like food or toys.", "options": [] },
+        { "prompt": "________ are helpful actions people do, like fixing a bike.", "options": [] },
+        { "prompt": "To ________ means to exchange one thing for another.", "options": [] },
+        { "prompt": "________ is hard work you put into a job.", "options": [] },
+        { "prompt": "To ________ money means to get it by working.", "options": [] },
+        { "prompt": "Grace ________ money more after her job.", "options": [] },
+        { "prompt": "Buying ice cream for her family was ________.", "options": [] },
+        { "prompt": "A ________ choice is careful and kind.", "options": [] },
+        { "prompt": "To ________ something means to feel thankful for it.", "options": [] }
+      ]
+    },
+    {
+      "day": 4,
+      "category": "Grammar",
+      "title": "Section 3: Grammar (Simple Past)",
+      "instructions": "Choose the correct past-tense form to complete each sentence.",
+      "questions": [
+        { "prompt": "Grace ___ the car with soap and water.", "options": ["A. wash", "B. washed", "C. washing", "D. washes"] },
+        { "prompt": "She ___ going until the job was done.", "options": ["A. keep", "B. kept", "C. keeping", "D. keeps"] },
+        { "prompt": "Did you ___ your friend yesterday?", "options": ["A. helped", "B. help", "C. helping", "D. helps"] },
+        { "prompt": "We did not ___ ice cream last week.", "options": ["A. bought", "B. buy", "C. buying", "D. buys"] },
+        { "prompt": "My dad ___ me a question.", "options": ["A. ask", "B. asked", "C. asking", "D. asks"] },
+        { "prompt": "I ___ a card for my teacher.", "options": ["A. make", "B. made", "C. making", "D. makes"] },
+        { "prompt": "The baby ___ a nap after lunch.", "options": ["A. take", "B. took", "C. taking", "D. takes"] },
+        { "prompt": "She did not ___ late today.", "options": ["A. woke", "B. wake up", "C. waking up", "D. wakes up"] },
+        { "prompt": "They ___ happy when they saw the surprise.", "options": ["A. are", "B. were", "C. was", "D. be"] },
+        { "prompt": "Did he ___ his shoes by the door?", "options": ["A. left", "B. leave", "C. leaving", "D. leaves"] }
+      ]
+    },
+    {
+      "day": 5,
+      "category": "Non-Fiction",
+      "title": "Jason Chooses Carefully",
+      "instructions": "Read the passage and answer the questions.",
+      "passage": [
+        "Money is limited, so people must choose what matters most. Jason learned this when he wanted two things at the same time: a new backpack and new shoes. His budget was small, and he could only buy one. Jason did not complain. Instead, he compared what he needed more. His old backpack was torn, and books almost fell out, so he chose the backpack.",
+        "After he bought it, Jason felt relieved, but he still wanted the shoes. His dad helped him make a simple plan. Jason wrote a goal: \"Save for shoes.\" He also wrote small steps, like saving part of his allowance and not buying extra snacks. Jason learned that saying \"no\" now can mean saying \"yes\" later.",
+        "Choosing carefully taught Jason patience and planning. He also felt proud because he made a smart decision by himself. When people understand limits, they can set goals, stay balanced, and avoid wasting money. Jason's choice was not perfect, but it was thoughtful, and it helped him feel ready for the future."
+      ],
+      "questions": [
+        { "prompt": "What did Jason choose to buy?", "options": ["A. A new backpack", "B. New shoes", "C. A skateboard", "D. A watch"] },
+        { "prompt": "Which is NOT mentioned as part of Jason's plan?", "options": ["A. Save part of his allowance", "B. Avoid extra snacks", "C. Write a goal", "D. Spend more money every day"] },
+        { "prompt": "Why did Jason choose the backpack?", "options": ["A. It was the prettiest", "B. His old backpack was torn", "C. His friends chose it", "D. Shoes are always bad"] },
+        { "prompt": "What will likely happen if Jason follows his plan?", "options": ["A. He will forget his goal", "B. He may save enough for shoes later", "C. He will waste money faster", "D. He will never buy anything again"] },
+        { "prompt": "\"Relieved\" most nearly means—", "options": ["A. angry", "B. worried", "C. thankful and less worried", "D. bored"] }
+      ]
+    },
+    {
+      "day": 5,
+      "category": "Vocabulary",
+      "title": "Section 2: Vocabulary",
+      "instructions": "Use a word from the box to complete each sentence.",
+      "word_box": {
+        "title": "WORD BOX",
+        "words": ["limited", "budget", "choose", "compare", "torn", "goal", "steps", "avoid", "waste", "future"]
+      },
+      "questions": [
+        { "prompt": "When money is ________, you cannot buy everything.", "options": [] },
+        { "prompt": "A ________ is a plan for how much money you can use.", "options": [] },
+        { "prompt": "You ________ when you pick one thing.", "options": [] },
+        { "prompt": "You ________ when you look at two things to decide.", "options": [] },
+        { "prompt": "A ________ backpack may have holes.", "options": [] },
+        { "prompt": "A ________ is something you want to reach.", "options": [] },
+        { "prompt": "________ are small actions that help you get to a goal.", "options": [] },
+        { "prompt": "You ________ extra snacks when you want to save money.", "options": [] },
+        { "prompt": "To ________ money means to use it in a careless way.", "options": [] },
+        { "prompt": "Your ________ is the time that comes later.", "options": [] }
+      ]
+    },
+    {
+      "day": 5,
+      "category": "Grammar",
+      "title": "Section 3: Grammar (Simple Past)",
+      "instructions": "Choose the correct past-tense form to complete each sentence.",
+      "questions": [
+        { "prompt": "Jason ___ one item at the store.", "options": ["A. chooses", "B. chose", "C. choosing", "D. choose"] },
+        { "prompt": "He ___ his old backpack was torn.", "options": ["A. know", "B. knew", "C. knowing", "D. knows"] },
+        { "prompt": "Did you ___ your allowance this week?", "options": ["A. saved", "B. save", "C. saving", "D. saves"] },
+        { "prompt": "We did not ___ chips today.", "options": ["A. ate", "B. eat", "C. eating", "D. eats"] },
+        { "prompt": "My friend ___ me a new game.", "options": ["A. show", "B. showed", "C. showing", "D. shows"] },
+        { "prompt": "The teacher ___ us a worksheet.", "options": ["A. give", "B. gave", "C. giving", "D. gives"] },
+        { "prompt": "I ___ my room yesterday.", "options": ["A. cleaned", "B. clean", "C. cleaning", "D. cleans"] },
+        { "prompt": "She did not ___ the window.", "options": ["A. opened", "B. open", "C. opening", "D. opens"] },
+        { "prompt": "Dad ___ a plan with Jason.", "options": ["A. make", "B. made", "C. making", "D. makes"] },
+        { "prompt": "Did they ___ home early?", "options": ["A. went", "B. go", "C. going", "D. goes"] }
       ]
     }
   ]
