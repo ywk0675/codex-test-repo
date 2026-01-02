@@ -5,6 +5,10 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Worksheet</title>
   <style>
+    @page {
+      size: A4;
+      margin: 10mm;
+    }
     :root {
       --border: #083175;
       --accent: #0066cc;
@@ -15,20 +19,31 @@
     * { box-sizing: border-box; }
     body {
       margin: 0;
-      padding: 24px;
+      padding: 16px;
       background: var(--background);
       font-family: "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }
     .page {
-      width: 820px;
-      margin: 0 auto 28px auto;
+      width: 210mm;
+      height: 297mm;
       background: #fff;
       border: 1px solid #dcdcdc;
       border-radius: 6px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      padding: 20px 28px 32px 28px;
+      padding: 12mm;
       position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }
+    .page-content {
+      width: 100%;
+      height: 100%;
+      transform-origin: top left;
     }
     .page-header {
       display: flex;
@@ -129,43 +144,66 @@
       margin-top: 20px;
       color: var(--muted);
       letter-spacing: 0.4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .footer-logo {
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }
+    @media print {
+      body {
+        background: #fff;
+        padding: 0;
+      }
+      .page {
+        box-shadow: none;
+        border: none;
+      }
     }
   </style>
 </head>
 <body>
   
     <section class="page">
-      <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 1</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 1</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Dylan and the Robot Toy</h1>
+          </div>
+          <div class='instructions'>Read the passage and answer the questions.</div>
           
-          <h1>Dylan and the Robot Toy</h1>
-        </div>
-        <div class='instructions'>Read the passage and answer the questions.</div>
-        
-        <div class='passage'><p>Dylan saved his allowance for weeks, and he finally bought a shiny robot toy. It looked strong in the store, and the box promised &quot;Super Power Moves.&quot; Dylan felt proud, so he opened it right away. For three days he played with it after dinner, and he even showed it to his cousin. But on the fourth day, the robot&#x27;s arm snapped when Dylan pressed a button. Dylan felt upset, and he wished he had checked the toy more carefully.</p>
+          <div class='passage'><p>Dylan saved his allowance for weeks, and he finally bought a shiny robot toy. It looked strong in the store, and the box promised &quot;Super Power Moves.&quot; Dylan felt proud, so he opened it right away. For three days he played with it after dinner, and he even showed it to his cousin. But on the fourth day, the robot&#x27;s arm snapped when Dylan pressed a button. Dylan felt upset, and he wished he had checked the toy more carefully.</p>
 <p>His mom said mistakes can teach smart habits. Dylan learned that ads and boxes can make products look better than they really are. Next time, he planned to look at the toy closely, and he would ask questions before paying. He also decided to compare prices and read simple reviews with an adult. Dylan still liked fun toys, but he wanted to spend money wisely. After that, he waited a day before buying something, so he could think calmly and choose well.</p></div>
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> What did Dylan buy?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. A robot toy</div><div class='option'><span class='option-label'>B.</span> B. A video game</div><div class='option'><span class='option-label'>C.</span> C. A bicycle</div><div class='option'><span class='option-label'>D.</span> D. A book</div></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> What did Dylan buy?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. A robot toy</div><div class='option'><span class='option-label'>B.</span> B. A video game</div><div class='option'><span class='option-label'>C.</span> C. A bicycle</div><div class='option'><span class='option-label'>D.</span> D. A book</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Which is NOT something Dylan decided to do next time?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Ask questions before paying</div><div class='option'><span class='option-label'>B.</span> B. Compare prices</div><div class='option'><span class='option-label'>C.</span> C. Read reviews with an adult</div><div class='option'><span class='option-label'>D.</span> D. Buy the first thing he sees</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Why did Dylan feel upset?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. The store was closed</div><div class='option'><span class='option-label'>B.</span> B. The robot&#x27;s arm snapped</div><div class='option'><span class='option-label'>C.</span> C. His cousin took the toy</div><div class='option'><span class='option-label'>D.</span> D. He lost his money</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> What will Dylan most likely do before his next purchase?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Hide his money</div><div class='option'><span class='option-label'>B.</span> B. Check the item carefully</div><div class='option'><span class='option-label'>C.</span> C. Stop buying toys forever</div><div class='option'><span class='option-label'>D.</span> D. Never listen to adults</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>5.</span> The word &quot;wisely&quot; means—</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. in a loud way</div><div class='option'><span class='option-label'>B.</span> B. in a smart way</div><div class='option'><span class='option-label'>C.</span> C. in a sleepy way</div><div class='option'><span class='option-label'>D.</span> D. in a fast way</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 1</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 1</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 2: Vocabulary</h1>
+          </div>
+          <div class='instructions'>Use a word from the box to complete each sentence.</div>
+          <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>allowance</span> <span class='word'>shiny</span> <span class='word'>promise</span> <span class='word'>snapped</span> <span class='word'>upset</span> <span class='word'>carefully</span> <span class='word'>compare</span> <span class='word'>review</span> <span class='word'>wisely</span> <span class='word'>purchase</span></div></div>
           
-          <h1>Section 2: Vocabulary</h1>
-        </div>
-        <div class='instructions'>Use a word from the box to complete each sentence.</div>
-        <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>allowance</span> <span class='word'>shiny</span> <span class='word'>promise</span> <span class='word'>snapped</span> <span class='word'>upset</span> <span class='word'>carefully</span> <span class='word'>compare</span> <span class='word'>review</span> <span class='word'>wisely</span> <span class='word'>purchase</span></div></div>
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> Dylan saved his ______ each week.</div><div class='options-grid'></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> Dylan saved his ______ each week.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> The toy looked ______ under the store lights.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> The box made a big ______ about the toy.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> The robot&#x27;s arm ______ when he pressed the button.</div><div class='options-grid'></div></div>
@@ -175,22 +213,26 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> Dylan read a ______ with an adult.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> He wanted to spend ______ and not rush.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> A ______ is something you buy.</div><div class='options-grid'></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 1</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 1</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 3: Grammar (Simple Past)</h1>
+          </div>
+          <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
           
-          <h1>Section 3: Grammar (Simple Past)</h1>
-        </div>
-        <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
-        
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> Yesterday, I ___ my homework after dinner.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. do</div><div class='option'><span class='option-label'>B.</span> B. did</div><div class='option'><span class='option-label'>C.</span> C. doing</div><div class='option'><span class='option-label'>D.</span> D. does</div></div></div>
+          
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> Yesterday, I ___ my homework after dinner.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. do</div><div class='option'><span class='option-label'>B.</span> B. did</div><div class='option'><span class='option-label'>C.</span> C. doing</div><div class='option'><span class='option-label'>D.</span> D. does</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Mom ___ to the store last night.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. goes</div><div class='option'><span class='option-label'>B.</span> B. went</div><div class='option'><span class='option-label'>C.</span> C. go</div><div class='option'><span class='option-label'>D.</span> D. going</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> We ___ not play outside because it rained.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. did</div><div class='option'><span class='option-label'>B.</span> B. do</div><div class='option'><span class='option-label'>C.</span> C. did not</div><div class='option'><span class='option-label'>D.</span> D. does not</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> My brother ___ a sandwich for lunch.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. eat</div><div class='option'><span class='option-label'>B.</span> B. ate</div><div class='option'><span class='option-label'>C.</span> C. eaten</div><div class='option'><span class='option-label'>D.</span> D. eats</div></div></div>
@@ -200,44 +242,52 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> She did not ___ her room yesterday.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. cleaned</div><div class='option'><span class='option-label'>B.</span> B. clean</div><div class='option'><span class='option-label'>C.</span> C. cleaning</div><div class='option'><span class='option-label'>D.</span> D. cleans</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> Dad ___ a funny story at breakfast.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. tells</div><div class='option'><span class='option-label'>B.</span> B. told</div><div class='option'><span class='option-label'>C.</span> C. telling</div><div class='option'><span class='option-label'>D.</span> D. tell</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> Did they ___ to school on time?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. came</div><div class='option'><span class='option-label'>B.</span> B. come</div><div class='option'><span class='option-label'>C.</span> C. coming</div><div class='option'><span class='option-label'>D.</span> D. comes</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 2</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 2</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>The Kim Family Budget Talk</h1>
+          </div>
+          <div class='instructions'>Read the passage and answer the questions.</div>
           
-          <h1>The Kim Family Budget Talk</h1>
-        </div>
-        <div class='instructions'>Read the passage and answer the questions.</div>
-        
-        <div class='passage'><p>The Kim family met every Sunday afternoon to plan how to use their money. They called it their &quot;family budget talk,&quot; and everyone had a turn to speak. Mr. Kim listed needs like groceries and bus cards. Mrs. Kim talked about saving for a winter trip. The children shared ideas too, but they had to explain why something mattered.</p>
+          <div class='passage'><p>The Kim family met every Sunday afternoon to plan how to use their money. They called it their &quot;family budget talk,&quot; and everyone had a turn to speak. Mr. Kim listed needs like groceries and bus cards. Mrs. Kim talked about saving for a winter trip. The children shared ideas too, but they had to explain why something mattered.</p>
 <p>One week, the kids wanted to eat out, and they also wanted new art supplies. The family did not say yes right away. Instead, they checked their plan and talked calmly. They asked, &quot;Do we need this now, or can it wait?&quot; In the end, they chose the art supplies, and they cooked dinner at home. The kids felt proud because they helped make a fair choice.</p>
 <p>Planning together taught the family patience and teamwork. It also helped them feel connected, because they listened to each other and made one plan. When families share decisions, they often build trust, and they learn how to spend with care.</p></div>
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> When did the Kim family meet to plan money?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Every Sunday afternoon</div><div class='option'><span class='option-label'>B.</span> B. Every Monday morning</div><div class='option'><span class='option-label'>C.</span> C. Every Friday night</div><div class='option'><span class='option-label'>D.</span> D. Every day after school</div></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> When did the Kim family meet to plan money?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Every Sunday afternoon</div><div class='option'><span class='option-label'>B.</span> B. Every Monday morning</div><div class='option'><span class='option-label'>C.</span> C. Every Friday night</div><div class='option'><span class='option-label'>D.</span> D. Every day after school</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Which is NOT mentioned as a need?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Groceries</div><div class='option'><span class='option-label'>B.</span> B. Bus cards</div><div class='option'><span class='option-label'>C.</span> C. Winter trip savings</div><div class='option'><span class='option-label'>D.</span> D. A new pet turtle</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Why did they cook dinner at home?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. They forgot to eat out</div><div class='option'><span class='option-label'>B.</span> B. They chose art supplies instead</div><div class='option'><span class='option-label'>C.</span> C. The restaurant was closed</div><div class='option'><span class='option-label'>D.</span> D. They wanted to be late</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> What kind of family is the Kim family?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. They ignore each other</div><div class='option'><span class='option-label'>B.</span> B. They make choices together</div><div class='option'><span class='option-label'>C.</span> C. They never save money</div><div class='option'><span class='option-label'>D.</span> D. They never talk</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>5.</span> &quot;Connected&quot; most nearly means—</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. close and joined</div><div class='option'><span class='option-label'>B.</span> B. tired and sleepy</div><div class='option'><span class='option-label'>C.</span> C. loud and busy</div><div class='option'><span class='option-label'>D.</span> D. angry and upset</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 2</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 2</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 2: Vocabulary</h1>
+          </div>
+          <div class='instructions'>Use a word from the box to complete each sentence.</div>
+          <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>budget</span> <span class='word'>plan</span> <span class='word'>need</span> <span class='word'>save</span> <span class='word'>opinion</span> <span class='word'>decide</span> <span class='word'>fair</span> <span class='word'>patiently</span> <span class='word'>connected</span> <span class='word'>trust</span></div></div>
           
-          <h1>Section 2: Vocabulary</h1>
-        </div>
-        <div class='instructions'>Use a word from the box to complete each sentence.</div>
-        <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>budget</span> <span class='word'>plan</span> <span class='word'>need</span> <span class='word'>save</span> <span class='word'>opinion</span> <span class='word'>decide</span> <span class='word'>fair</span> <span class='word'>patiently</span> <span class='word'>connected</span> <span class='word'>trust</span></div></div>
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> A ______ helps a family know how to use money.</div><div class='options-grid'></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> A ______ helps a family know how to use money.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> A ______ is an idea for what to do next.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Food is something we ______ every week.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> When you ______, you keep money for later.</div><div class='options-grid'></div></div>
@@ -247,22 +297,26 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> We should wait ______ and not rush.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> Talking and listening keeps families ______.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> When people keep promises, they build ______.</div><div class='options-grid'></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 2</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 2</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 3: Grammar (Simple Past)</h1>
+          </div>
+          <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
           
-          <h1>Section 3: Grammar (Simple Past)</h1>
-        </div>
-        <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
-        
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> We ___ about our weekend yesterday.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. talk</div><div class='option'><span class='option-label'>B.</span> B. talked</div><div class='option'><span class='option-label'>C.</span> C. talking</div><div class='option'><span class='option-label'>D.</span> D. talks</div></div></div>
+          
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> We ___ about our weekend yesterday.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. talk</div><div class='option'><span class='option-label'>B.</span> B. talked</div><div class='option'><span class='option-label'>C.</span> C. talking</div><div class='option'><span class='option-label'>D.</span> D. talks</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> My sister ___ a picture for Grandma.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. draw</div><div class='option'><span class='option-label'>B.</span> B. drew</div><div class='option'><span class='option-label'>C.</span> C. drawing</div><div class='option'><span class='option-label'>D.</span> D. draws</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> I did not ___ my snack at school.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. ate</div><div class='option'><span class='option-label'>B.</span> B. eat</div><div class='option'><span class='option-label'>C.</span> C. eating</div><div class='option'><span class='option-label'>D.</span> D. eats</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> Did he ___ his jacket this morning?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. wore</div><div class='option'><span class='option-label'>B.</span> B. wear</div><div class='option'><span class='option-label'>C.</span> C. wearing</div><div class='option'><span class='option-label'>D.</span> D. wears</div></div></div>
@@ -272,44 +326,52 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> She did not ___ to the park.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. went</div><div class='option'><span class='option-label'>B.</span> B. go</div><div class='option'><span class='option-label'>C.</span> C. going</div><div class='option'><span class='option-label'>D.</span> D. goes</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> The dog ___ water after the walk.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. drink</div><div class='option'><span class='option-label'>B.</span> B. drank</div><div class='option'><span class='option-label'>C.</span> C. drinking</div><div class='option'><span class='option-label'>D.</span> D. drinks</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> Did they ___ you a gift?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. gave</div><div class='option'><span class='option-label'>B.</span> B. give</div><div class='option'><span class='option-label'>C.</span> C. giving</div><div class='option'><span class='option-label'>D.</span> D. gives</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 3</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 3</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>The No-Spend Challenge</h1>
+          </div>
+          <div class='instructions'>Read the passage and answer the questions.</div>
           
-          <h1>The No-Spend Challenge</h1>
-        </div>
-        <div class='instructions'>Read the passage and answer the questions.</div>
-        
-        <div class='passage'><p>One teacher gave her class a challenge: &quot;Spend no money for one week.&quot; At first, the students worried, because buying snacks and toys felt normal. Still, they agreed to try, and they made a list of free ideas. Lily baked cookies at home instead of buying candy. Reggie invited friends over, and they played board games. Another group made paper airplanes and held a small contest.</p>
+          <div class='passage'><p>One teacher gave her class a challenge: &quot;Spend no money for one week.&quot; At first, the students worried, because buying snacks and toys felt normal. Still, they agreed to try, and they made a list of free ideas. Lily baked cookies at home instead of buying candy. Reggie invited friends over, and they played board games. Another group made paper airplanes and held a small contest.</p>
 <p>After a few days, the students noticed something surprising. They laughed more, and they talked more, because they were sharing time instead of shopping. On Friday, the teacher asked them to reflect. Many students said they saved more money than they expected, but they also felt happier than before. They learned that fun does not always need a price tag.</p>
 <p>The class also learned a new habit: pause before spending. When they wanted something, they asked, &quot;Do I truly need this?&quot; The challenge ended, but the lesson stayed. The students discovered that people and creativity can bring real joy.</p></div>
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> What was the class challenge?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Spend no money for one week</div><div class='option'><span class='option-label'>B.</span> B. Run a mile every day</div><div class='option'><span class='option-label'>C.</span> C. Read ten books in one day</div><div class='option'><span class='option-label'>D.</span> D. Clean the whole school</div></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> What was the class challenge?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Spend no money for one week</div><div class='option'><span class='option-label'>B.</span> B. Run a mile every day</div><div class='option'><span class='option-label'>C.</span> C. Read ten books in one day</div><div class='option'><span class='option-label'>D.</span> D. Clean the whole school</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Which is NOT an activity mentioned?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Baking cookies</div><div class='option'><span class='option-label'>B.</span> B. Playing board games</div><div class='option'><span class='option-label'>C.</span> C. Making paper airplanes</div><div class='option'><span class='option-label'>D.</span> D. Buying new video games</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> What happened because they stopped shopping?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. They talked and laughed more</div><div class='option'><span class='option-label'>B.</span> B. They forgot their homework</div><div class='option'><span class='option-label'>C.</span> C. They became angry every day</div><div class='option'><span class='option-label'>D.</span> D. They stopped seeing friends</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> Why did the teacher ask them to reflect on Friday?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. To help them think about what they learned</div><div class='option'><span class='option-label'>B.</span> B. To make them buy snacks</div><div class='option'><span class='option-label'>C.</span> C. To punish the class</div><div class='option'><span class='option-label'>D.</span> D. To end school early</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>5.</span> &quot;Reflect&quot; most nearly means—</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. run quickly</div><div class='option'><span class='option-label'>B.</span> B. think back carefully</div><div class='option'><span class='option-label'>C.</span> C. shout loudly</div><div class='option'><span class='option-label'>D.</span> D. fall asleep</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 3</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 3</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 2: Vocabulary</h1>
+          </div>
+          <div class='instructions'>Use a word from the box to complete each sentence.</div>
+          <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>challenge</span> <span class='word'>worried</span> <span class='word'>list</span> <span class='word'>free</span> <span class='word'>contest</span> <span class='word'>surprising</span> <span class='word'>expected</span> <span class='word'>price tag</span> <span class='word'>pause</span> <span class='word'>creativity</span></div></div>
           
-          <h1>Section 2: Vocabulary</h1>
-        </div>
-        <div class='instructions'>Use a word from the box to complete each sentence.</div>
-        <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>challenge</span> <span class='word'>worried</span> <span class='word'>list</span> <span class='word'>free</span> <span class='word'>contest</span> <span class='word'>surprising</span> <span class='word'>expected</span> <span class='word'>price tag</span> <span class='word'>pause</span> <span class='word'>creativity</span></div></div>
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> A ______ is a task that can be hard but helpful.</div><div class='options-grid'></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> A ______ is a task that can be hard but helpful.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> The students felt ______ at first.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> They made a ______ of ideas.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> They chose ______ activities that cost no money.</div><div class='options-grid'></div></div>
@@ -319,22 +381,26 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> A ______ shows how much something costs.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> They learned to ______ before spending.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> New ideas and making things show ______.</div><div class='options-grid'></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 3</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 3</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 3: Grammar (Simple Past)</h1>
+          </div>
+          <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
           
-          <h1>Section 3: Grammar (Simple Past)</h1>
-        </div>
-        <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
-        
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> Yesterday, we ___ a game at home.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. play</div><div class='option'><span class='option-label'>B.</span> B. played</div><div class='option'><span class='option-label'>C.</span> C. playing</div><div class='option'><span class='option-label'>D.</span> D. plays</div></div></div>
+          
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> Yesterday, we ___ a game at home.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. play</div><div class='option'><span class='option-label'>B.</span> B. played</div><div class='option'><span class='option-label'>C.</span> C. playing</div><div class='option'><span class='option-label'>D.</span> D. plays</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Lily ___ cookies for her friends.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. bake</div><div class='option'><span class='option-label'>B.</span> B. baked</div><div class='option'><span class='option-label'>C.</span> C. baking</div><div class='option'><span class='option-label'>D.</span> D. bakes</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Did you ___ your room last night?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. cleaned</div><div class='option'><span class='option-label'>B.</span> B. clean</div><div class='option'><span class='option-label'>C.</span> C. cleaning</div><div class='option'><span class='option-label'>D.</span> D. cleans</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> We did not ___ any money this week.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. spent</div><div class='option'><span class='option-label'>B.</span> B. spend</div><div class='option'><span class='option-label'>C.</span> C. spending</div><div class='option'><span class='option-label'>D.</span> D. spends</div></div></div>
@@ -344,44 +410,52 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> Did she ___ the book yesterday?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. read</div><div class='option'><span class='option-label'>B.</span> B. reads</div><div class='option'><span class='option-label'>C.</span> C. reading</div><div class='option'><span class='option-label'>D.</span> D. reader</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> I ___ my lunch at home, so I was hungry.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. left</div><div class='option'><span class='option-label'>B.</span> B. leave</div><div class='option'><span class='option-label'>C.</span> C. leaving</div><div class='option'><span class='option-label'>D.</span> D. leaves</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> They did not ___ late to class.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. arrived</div><div class='option'><span class='option-label'>B.</span> B. arrive</div><div class='option'><span class='option-label'>C.</span> C. arriving</div><div class='option'><span class='option-label'>D.</span> D. arrives</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 4</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 4</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Learning the Value of Money</h1>
+          </div>
+          <div class='instructions'>Read the passage and answer the questions.</div>
           
-          <h1>Learning the Value of Money</h1>
-        </div>
-        <div class='instructions'>Read the passage and answer the questions.</div>
-        
-        <div class='passage'><p>Money has value because people agree to use it to buy goods and services. Long ago, people traded things like eggs, rice, or cloth. Today, many people use coins, bills, or cards instead. Understanding the value of a dollar helps children see how time, effort, and choices connect.</p>
+          <div class='passage'><p>Money has value because people agree to use it to buy goods and services. Long ago, people traded things like eggs, rice, or cloth. Today, many people use coins, bills, or cards instead. Understanding the value of a dollar helps children see how time, effort, and choices connect.</p>
 <p>Grace learned this when she earned five dollars by washing her neighbor&#x27;s car. The work was not quick, but she kept going, and she finished carefully. Later, Grace spent the five dollars on ice cream for her family. She watched everyone smile, and she felt proud. Grace realized something important: money is not only for buying things for yourself. It can also be for sharing and creating happiness.</p>
 <p>After that day, Grace respected money more. She asked herself, &quot;How long did I work for this?&quot; She also started making smaller plans, like saving part of her money and spending part. When children understand value, they make thoughtful choices, and they appreciate what they have.</p></div>
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> How did Grace earn five dollars?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. She washed a neighbor&#x27;s car</div><div class='option'><span class='option-label'>B.</span> B. She sold a bicycle</div><div class='option'><span class='option-label'>C.</span> C. She found it on the ground</div><div class='option'><span class='option-label'>D.</span> D. She won a game</div></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> How did Grace earn five dollars?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. She washed a neighbor&#x27;s car</div><div class='option'><span class='option-label'>B.</span> B. She sold a bicycle</div><div class='option'><span class='option-label'>C.</span> C. She found it on the ground</div><div class='option'><span class='option-label'>D.</span> D. She won a game</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Which is NOT mentioned as an old way people traded?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Eggs</div><div class='option'><span class='option-label'>B.</span> B. Rice</div><div class='option'><span class='option-label'>C.</span> C. Cloth</div><div class='option'><span class='option-label'>D.</span> D. Phones</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Why did Grace feel proud after buying ice cream?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. She stole money</div><div class='option'><span class='option-label'>B.</span> B. She used her earnings to make her family happy</div><div class='option'><span class='option-label'>C.</span> C. She bought the biggest item</div><div class='option'><span class='option-label'>D.</span> D. She did not work at all</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> What will Grace most likely do next time she gets money?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Spend all of it right away</div><div class='option'><span class='option-label'>B.</span> B. Make a plan to save and spend</div><div class='option'><span class='option-label'>C.</span> C. Hide it forever</div><div class='option'><span class='option-label'>D.</span> D. Throw it away</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>5.</span> &quot;Appreciate&quot; most nearly means—</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. laugh loudly</div><div class='option'><span class='option-label'>B.</span> B. value and feel thankful for</div><div class='option'><span class='option-label'>C.</span> C. forget quickly</div><div class='option'><span class='option-label'>D.</span> D. complain about</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 4</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 4</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 2: Vocabulary</h1>
+          </div>
+          <div class='instructions'>Use a word from the box to complete each sentence.</div>
+          <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>value</span> <span class='word'>goods</span> <span class='word'>services</span> <span class='word'>trade</span> <span class='word'>effort</span> <span class='word'>earn</span> <span class='word'>respected</span> <span class='word'>sharing</span> <span class='word'>thoughtful</span> <span class='word'>appreciate</span></div></div>
           
-          <h1>Section 2: Vocabulary</h1>
-        </div>
-        <div class='instructions'>Use a word from the box to complete each sentence.</div>
-        <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>value</span> <span class='word'>goods</span> <span class='word'>services</span> <span class='word'>trade</span> <span class='word'>effort</span> <span class='word'>earn</span> <span class='word'>respected</span> <span class='word'>sharing</span> <span class='word'>thoughtful</span> <span class='word'>appreciate</span></div></div>
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> ________ means how important something is.</div><div class='options-grid'></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> ________ means how important something is.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> ________ are items you can buy, like food or toys.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> ________ are helpful actions people do, like fixing a bike.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> To ________ means to exchange one thing for another.</div><div class='options-grid'></div></div>
@@ -391,22 +465,26 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> Buying ice cream for her family was ________.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> A ________ choice is careful and kind.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> To ________ something means to feel thankful for it.</div><div class='options-grid'></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 4</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 4</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 3: Grammar (Simple Past)</h1>
+          </div>
+          <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
           
-          <h1>Section 3: Grammar (Simple Past)</h1>
-        </div>
-        <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
-        
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> Grace ___ the car with soap and water.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. wash</div><div class='option'><span class='option-label'>B.</span> B. washed</div><div class='option'><span class='option-label'>C.</span> C. washing</div><div class='option'><span class='option-label'>D.</span> D. washes</div></div></div>
+          
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> Grace ___ the car with soap and water.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. wash</div><div class='option'><span class='option-label'>B.</span> B. washed</div><div class='option'><span class='option-label'>C.</span> C. washing</div><div class='option'><span class='option-label'>D.</span> D. washes</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> She ___ going until the job was done.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. keep</div><div class='option'><span class='option-label'>B.</span> B. kept</div><div class='option'><span class='option-label'>C.</span> C. keeping</div><div class='option'><span class='option-label'>D.</span> D. keeps</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Did you ___ your friend yesterday?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. helped</div><div class='option'><span class='option-label'>B.</span> B. help</div><div class='option'><span class='option-label'>C.</span> C. helping</div><div class='option'><span class='option-label'>D.</span> D. helps</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> We did not ___ ice cream last week.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. bought</div><div class='option'><span class='option-label'>B.</span> B. buy</div><div class='option'><span class='option-label'>C.</span> C. buying</div><div class='option'><span class='option-label'>D.</span> D. buys</div></div></div>
@@ -416,44 +494,52 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> She did not ___ late today.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. woke</div><div class='option'><span class='option-label'>B.</span> B. wake up</div><div class='option'><span class='option-label'>C.</span> C. waking up</div><div class='option'><span class='option-label'>D.</span> D. wakes up</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> They ___ happy when they saw the surprise.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. are</div><div class='option'><span class='option-label'>B.</span> B. were</div><div class='option'><span class='option-label'>C.</span> C. was</div><div class='option'><span class='option-label'>D.</span> D. be</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> Did he ___ his shoes by the door?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. left</div><div class='option'><span class='option-label'>B.</span> B. leave</div><div class='option'><span class='option-label'>C.</span> C. leaving</div><div class='option'><span class='option-label'>D.</span> D. leaves</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 5</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Non-Fiction</div><div class='day-label'>DAY 5</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Jason Chooses Carefully</h1>
+          </div>
+          <div class='instructions'>Read the passage and answer the questions.</div>
           
-          <h1>Jason Chooses Carefully</h1>
-        </div>
-        <div class='instructions'>Read the passage and answer the questions.</div>
-        
-        <div class='passage'><p>Money is limited, so people must choose what matters most. Jason learned this when he wanted two things at the same time: a new backpack and new shoes. His budget was small, and he could only buy one. Jason did not complain. Instead, he compared what he needed more. His old backpack was torn, and books almost fell out, so he chose the backpack.</p>
+          <div class='passage'><p>Money is limited, so people must choose what matters most. Jason learned this when he wanted two things at the same time: a new backpack and new shoes. His budget was small, and he could only buy one. Jason did not complain. Instead, he compared what he needed more. His old backpack was torn, and books almost fell out, so he chose the backpack.</p>
 <p>After he bought it, Jason felt relieved, but he still wanted the shoes. His dad helped him make a simple plan. Jason wrote a goal: &quot;Save for shoes.&quot; He also wrote small steps, like saving part of his allowance and not buying extra snacks. Jason learned that saying &quot;no&quot; now can mean saying &quot;yes&quot; later.</p>
 <p>Choosing carefully taught Jason patience and planning. He also felt proud because he made a smart decision by himself. When people understand limits, they can set goals, stay balanced, and avoid wasting money. Jason&#x27;s choice was not perfect, but it was thoughtful, and it helped him feel ready for the future.</p></div>
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> What did Jason choose to buy?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. A new backpack</div><div class='option'><span class='option-label'>B.</span> B. New shoes</div><div class='option'><span class='option-label'>C.</span> C. A skateboard</div><div class='option'><span class='option-label'>D.</span> D. A watch</div></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> What did Jason choose to buy?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. A new backpack</div><div class='option'><span class='option-label'>B.</span> B. New shoes</div><div class='option'><span class='option-label'>C.</span> C. A skateboard</div><div class='option'><span class='option-label'>D.</span> D. A watch</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> Which is NOT mentioned as part of Jason&#x27;s plan?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. Save part of his allowance</div><div class='option'><span class='option-label'>B.</span> B. Avoid extra snacks</div><div class='option'><span class='option-label'>C.</span> C. Write a goal</div><div class='option'><span class='option-label'>D.</span> D. Spend more money every day</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Why did Jason choose the backpack?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. It was the prettiest</div><div class='option'><span class='option-label'>B.</span> B. His old backpack was torn</div><div class='option'><span class='option-label'>C.</span> C. His friends chose it</div><div class='option'><span class='option-label'>D.</span> D. Shoes are always bad</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> What will likely happen if Jason follows his plan?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. He will forget his goal</div><div class='option'><span class='option-label'>B.</span> B. He may save enough for shoes later</div><div class='option'><span class='option-label'>C.</span> C. He will waste money faster</div><div class='option'><span class='option-label'>D.</span> D. He will never buy anything again</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>5.</span> &quot;Relieved&quot; most nearly means—</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. angry</div><div class='option'><span class='option-label'>B.</span> B. worried</div><div class='option'><span class='option-label'>C.</span> C. thankful and less worried</div><div class='option'><span class='option-label'>D.</span> D. bored</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 5</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Vocabulary</div><div class='day-label'>DAY 5</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 2: Vocabulary</h1>
+          </div>
+          <div class='instructions'>Use a word from the box to complete each sentence.</div>
+          <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>limited</span> <span class='word'>budget</span> <span class='word'>choose</span> <span class='word'>compare</span> <span class='word'>torn</span> <span class='word'>goal</span> <span class='word'>steps</span> <span class='word'>avoid</span> <span class='word'>waste</span> <span class='word'>future</span></div></div>
           
-          <h1>Section 2: Vocabulary</h1>
-        </div>
-        <div class='instructions'>Use a word from the box to complete each sentence.</div>
-        <div class='word-box'><div class='word-box-title'>WORD BOX</div><div class='word-box-words'><span class='word'>limited</span> <span class='word'>budget</span> <span class='word'>choose</span> <span class='word'>compare</span> <span class='word'>torn</span> <span class='word'>goal</span> <span class='word'>steps</span> <span class='word'>avoid</span> <span class='word'>waste</span> <span class='word'>future</span></div></div>
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> When money is ________, you cannot buy everything.</div><div class='options-grid'></div></div>
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> When money is ________, you cannot buy everything.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> A ________ is a plan for how much money you can use.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> You ________ when you pick one thing.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> You ________ when you look at two things to decide.</div><div class='options-grid'></div></div>
@@ -463,22 +549,26 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> You ________ extra snacks when you want to save money.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> To ________ money means to use it in a careless way.</div><div class='options-grid'></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> Your ________ is the time that comes later.</div><div class='options-grid'></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
 
     <section class="page">
-      <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 5</div></header>
-      <div class="page-body">
-        <div class="titles">
+      <div class="page-content">
+        <header class='page-header'><div class='meta'>Grammar</div><div class='day-label'>DAY 5</div></header>
+        <div class="page-body">
+          <div class="titles">
+            
+            <h1>Section 3: Grammar (Simple Past)</h1>
+          </div>
+          <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
           
-          <h1>Section 3: Grammar (Simple Past)</h1>
-        </div>
-        <div class='instructions'>Choose the correct past-tense form to complete each sentence.</div>
-        
-        
-        <div class='question'><div class='question-text'><span class='question-number'>1.</span> Jason ___ one item at the store.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. chooses</div><div class='option'><span class='option-label'>B.</span> B. chose</div><div class='option'><span class='option-label'>C.</span> C. choosing</div><div class='option'><span class='option-label'>D.</span> D. choose</div></div></div>
+          
+          <div class='question'><div class='question-text'><span class='question-number'>1.</span> Jason ___ one item at the store.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. chooses</div><div class='option'><span class='option-label'>B.</span> B. chose</div><div class='option'><span class='option-label'>C.</span> C. choosing</div><div class='option'><span class='option-label'>D.</span> D. choose</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>2.</span> He ___ his old backpack was torn.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. know</div><div class='option'><span class='option-label'>B.</span> B. knew</div><div class='option'><span class='option-label'>C.</span> C. knowing</div><div class='option'><span class='option-label'>D.</span> D. knows</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>3.</span> Did you ___ your allowance this week?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. saved</div><div class='option'><span class='option-label'>B.</span> B. save</div><div class='option'><span class='option-label'>C.</span> C. saving</div><div class='option'><span class='option-label'>D.</span> D. saves</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>4.</span> We did not ___ chips today.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. ate</div><div class='option'><span class='option-label'>B.</span> B. eat</div><div class='option'><span class='option-label'>C.</span> C. eating</div><div class='option'><span class='option-label'>D.</span> D. eats</div></div></div>
@@ -488,9 +578,28 @@
 <div class='question'><div class='question-text'><span class='question-number'>8.</span> She did not ___ the window.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. opened</div><div class='option'><span class='option-label'>B.</span> B. open</div><div class='option'><span class='option-label'>C.</span> C. opening</div><div class='option'><span class='option-label'>D.</span> D. opens</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>9.</span> Dad ___ a plan with Jason.</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. make</div><div class='option'><span class='option-label'>B.</span> B. made</div><div class='option'><span class='option-label'>C.</span> C. making</div><div class='option'><span class='option-label'>D.</span> D. makes</div></div></div>
 <div class='question'><div class='question-text'><span class='question-number'>10.</span> Did they ___ home early?</div><div class='options-grid'><div class='option'><span class='option-label'>A.</span> A. went</div><div class='option'><span class='option-label'>B.</span> B. go</div><div class='option'><span class='option-label'>C.</span> C. going</div><div class='option'><span class='option-label'>D.</span> D. goes</div></div></div>
+        </div>
+        <footer class="page-footer">
+          <img src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0iSi1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9IndoaXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMwMDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQtd2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4=" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {
+        const content = page.querySelector('.page-content');
+        if (!content) return;
+        const availableHeight = page.clientHeight;
+        const contentHeight = content.scrollHeight;
+        if (contentHeight > availableHeight) {
+          const scale = availableHeight / contentHeight;
+          content.style.transform = `scale(${scale})`;
+          content.style.width = `${100 / scale}%`;
+        }
+      });
+    });
+  </script>
 </body>
 </html>

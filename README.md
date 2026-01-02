@@ -32,3 +32,8 @@ This repository provides a lightweight converter that turns structured JSON into
   - `questions` (array, optional): Each question accepts a `prompt` and optional `options` array. Options render as a two-column grid to mirror the reference multiple-choice layout.
 
 The converter focuses on repeatable spacing, borders, and typography to keep pages consistent across days. The CSS is embedded into the generated HTML for portability; no external assets or dependencies are required.
+
+## Layout and printing
+
+- Each page is locked to A4 size (210mm × 297mm) with print CSS, and a small scaling script automatically reduces content to keep everything on a single page (no overflow onto extra sheets).
+- The footer uses an embedded logo image (no external files needed), so the exported HTML/PDF matches the provided reference footer art.

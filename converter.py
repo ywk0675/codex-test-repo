@@ -15,6 +15,18 @@ import json
 from pathlib import Path
 from typing import Any, Dict, Iterable, List
 
+FOOTER_LOGO_DATA = (
+    "data:image/svg+xml;base64,"
+    "PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHdpZHRoPSIxNTAiIGhl"
+    "aWdodD0iMzIiIHZpZXdCb3g9IjAgMCAxNTAgMzIiIHJvbGU9ImltZyIgYXJpYS1sYWJlbD0i"
+    "Si1VUyBJbnN0aXR1dGUiPjxyZWN0IHdpZHRoPSIxNTAiIGhlaWdodD0iMzIiIGZpbGw9Indo"
+    "aXRlIi8+PHRleHQgeD0iNzUiIHk9IjE0IiB0ZXh0LWFuY2hvcj0ibWlkZGxlIiBmb250LWZh"
+    "bWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTYiIGZvbnQtd2VpZ2h0PSI3MDAiIGZpbGw9IiMw"
+    "MDAiPkrigKJVUyBJTlNUSVRVVEU8L3RleHQ+PHRleHQgeD0iNzUiIHk9IjI2IiB0ZXh0LWFu"
+    "Y2hvcj0ibWlkZGxlIiBmb250LWZhbWlseT0ic2VyaWYiIGZvbnQtc2l6ZT0iMTEiIGZvbnQt"
+    "d2VpZ2h0PSI0MDAiIGZpbGw9IiMwMDAiPkpVQklMRUUgV0lUSCBVUzwvdGV4dD48L3N2Zz4="
+)
+
 
 def build_args() -> argparse.Namespace:
     parser = argparse.ArgumentParser(description="Convert worksheet JSON into styled HTML.")
@@ -100,18 +112,22 @@ def render_page(page: Dict[str, Any]) -> str:
     word_box_html = render_word_box(page["word_box"]) if page.get("word_box") else ""
     return f"""
     <section class="page">
-      {render_header(page)}
-      <div class="page-body">
-        <div class="titles">
-          {f"<div class='subtitle'>{subtitle}</div>" if subtitle else ""}
-          {f"<h1>{title}</h1>" if title else ""}
+      <div class="page-content">
+        {render_header(page)}
+        <div class="page-body">
+          <div class="titles">
+            {f"<div class='subtitle'>{subtitle}</div>" if subtitle else ""}
+            {f"<h1>{title}</h1>" if title else ""}
+          </div>
+          {f"<div class='instructions'>{instructions}</div>" if instructions else ""}
+          {word_box_html}
+          {f"<div class='passage'>{passage}</div>" if passage else ""}
+          {questions_html}
         </div>
-        {f"<div class='instructions'>{instructions}</div>" if instructions else ""}
-        {word_box_html}
-        {f"<div class='passage'>{passage}</div>" if passage else ""}
-        {questions_html}
+        <footer class="page-footer">
+          <img src="{FOOTER_LOGO_DATA}" alt="J-US Institute logo" class="footer-logo" />
+        </footer>
       </div>
-      <footer class="page-footer">J-US INSTITUTE — LEARNING WITH US</footer>
     </section>
     """
 
@@ -125,6 +141,10 @@ def render_document(pages: List[Dict[str, Any]]) -> str:
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Worksheet</title>
   <style>
+    @page {{
+      size: A4;
+      margin: 10mm;
+    }}
     :root {{
       --border: #083175;
       --accent: #0066cc;
@@ -135,20 +155,31 @@ def render_document(pages: List[Dict[str, Any]]) -> str:
     * {{ box-sizing: border-box; }}
     body {{
       margin: 0;
-      padding: 24px;
+      padding: 16px;
       background: var(--background);
       font-family: "Helvetica Neue", Arial, sans-serif;
       color: var(--text);
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      align-items: center;
     }}
     .page {{
-      width: 820px;
-      margin: 0 auto 28px auto;
+      width: 210mm;
+      height: 297mm;
       background: #fff;
       border: 1px solid #dcdcdc;
       border-radius: 6px;
       box-shadow: 0 6px 16px rgba(0,0,0,0.06);
-      padding: 20px 28px 32px 28px;
+      padding: 12mm;
       position: relative;
+      overflow: hidden;
+      page-break-inside: avoid;
+    }}
+    .page-content {{
+      width: 100%;
+      height: 100%;
+      transform-origin: top left;
     }}
     .page-header {{
       display: flex;
@@ -249,11 +280,45 @@ def render_document(pages: List[Dict[str, Any]]) -> str:
       margin-top: 20px;
       color: var(--muted);
       letter-spacing: 0.4px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }}
+    .footer-logo {{
+      height: 24px;
+      width: auto;
+      object-fit: contain;
+    }}
+    @media print {{
+      body {{
+        background: #fff;
+        padding: 0;
+      }}
+      .page {{
+        box-shadow: none;
+        border: none;
+      }}
     }}
   </style>
 </head>
 <body>
   {body}
+  <script>
+    document.addEventListener('DOMContentLoaded', () => {{
+      const pages = document.querySelectorAll('.page');
+      pages.forEach(page => {{
+        const content = page.querySelector('.page-content');
+        if (!content) return;
+        const availableHeight = page.clientHeight;
+        const contentHeight = content.scrollHeight;
+        if (contentHeight > availableHeight) {{
+          const scale = availableHeight / contentHeight;
+          content.style.transform = `scale(${{scale}})`;
+          content.style.width = `${{100 / scale}}%`;
+        }}
+      }});
+    }});
+  </script>
 </body>
 </html>
 """
