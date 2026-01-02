@@ -1,0 +1,73 @@
+{
+  "pages": [
+    {
+      "day": 1,
+      "category": "Non-Fiction",
+      "lexile": "500L–530L",
+      "word_count": "180–190",
+      "title": "Learning from Spending Mistakes",
+      "passage": [
+        "Everyone makes mistakes when spending money, but the important thing is to learn from them. Dylan once bought an expensive toy that broke after a week. He felt disappointed and realized he had not checked if it was well made.",
+        "Making mistakes helps us think before buying next time. Adults and children both learn that advertisements can make products look better than they really are. After that day, Dylan began to ask more questions about products and waited before deciding to buy.",
+        "Learning from mistakes turns bad experiences into valuable lessons. Every mistake can teach us how to spend money with more care, understanding, and responsibility. People who learn from their spending mistakes become smarter shoppers over time."
+      ],
+      "questions": [
+        {
+          "prompt": "What lesson did Dylan learn after buying a toy that broke in a week?",
+          "options": [
+            "Expensive items are always better.",
+            "He should check quality before spending.",
+            "Toys do not need to last long.",
+            "It is fine to waste money on fun things."
+          ]
+        },
+        {
+          "prompt": "Which of the following is NOT true according to the passage?",
+          "options": [
+            "Dylan's toy broke quickly after he bought it.",
+            "Mistakes can teach people to think before buying.",
+            "Advertisements always show products honestly.",
+            "Adults and children can both learn from mistakes."
+          ]
+        }
+      ]
+    },
+    {
+      "day": 1,
+      "category": "Vocabulary",
+      "title": "Vocabulary",
+      "subtitle": "Instructions:",
+      "instructions": "Choose the word from the box that best completes the sentence.",
+      "word_box": {
+        "title": "WORD BOX",
+        "words": ["audible", "consume", "glide", "origin", "prevent", "punctuate", "representative", "scorn", "stout", "woe"]
+      },
+      "questions": [
+        {
+          "prompt": "The bird began to ______ across the sky as the wind blew gently.",
+          "options": []
+        },
+        {
+          "prompt": "Please don't ______ him just because he made a small mistake.",
+          "options": []
+        }
+      ]
+    },
+    {
+      "day": 2,
+      "category": "Grammar",
+      "title": "Grammar: Past Tense",
+      "instructions": "Read the sentences and choose the right answer.",
+      "questions": [
+        {
+          "prompt": "Grace _______ a beautiful picture yesterday.",
+          "options": ["draw", "drew", "drawing"]
+        },
+        {
+          "prompt": "The birds _______ away when it started raining.",
+          "options": ["fly", "flew", "flying"]
+        }
+      ]
+    }
+  ]
+}
