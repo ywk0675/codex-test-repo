@@ -5,6 +5,7 @@ import Recorder from './pages/Recorder';
 import Patterns from './pages/Patterns';
 import Coach from './pages/Coach';
 import Onboarding from './pages/Onboarding';
+import Marketing from './pages/Marketing';
 
 function App() {
   return (
@@ -16,6 +17,7 @@ function App() {
           <Route path="/patterns" element={<Patterns />} />
           <Route path="/coach" element={<Coach />} />
           <Route path="/onboarding" element={<Onboarding />} />
+          <Route path="/marketing" element={<Marketing />} />
         </Routes>
       </div>
     </Router>

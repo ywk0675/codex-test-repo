@@ -7,7 +7,7 @@ const BottomNav = () => {
     { name: 'Patterns', path: '/patterns', icon: 'bar_chart' },
     { name: 'Record', path: '/record', icon: 'add_circle', isHighlight: true },
     { name: 'Coach', path: '/coach', icon: 'smart_toy' },
-    // { name: 'Settings', path: '/settings', icon: 'settings' }, // Not implemented
+    { name: 'Marketing', path: '/marketing', icon: 'campaign' },
   ];
 
   return (
