@@ -104,7 +104,7 @@ app.post('/api/marketing/run', async (req, res) => {
 
       const stream = client.messages.stream({
         model: 'claude-opus-4-6',
-        max_tokens: 2048,
+        max_tokens: 8192,
         thinking: { type: 'adaptive' },
         system: agent.systemPrompt,
         messages: [{ role: 'user', content: userMessage }],

@@ -208,12 +208,15 @@ const Marketing = () => {
     reset();
     setIsRunning(true);
 
+    const controller = new AbortController();
+    abortRef.current = controller;
+
     try {
       const response = await fetch('/api/marketing/run', {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({ task }),
-        signal: abortRef.current,
+        signal: controller.signal,
       });
 
       if (!response.ok) {
