@@ -1,23 +1,27 @@
 import React from 'react';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
-import Home from './pages/Home';
-import Recorder from './pages/Recorder';
-import Patterns from './pages/Patterns';
-import Coach from './pages/Coach';
-import Onboarding from './pages/Onboarding';
+import { SettingsProvider } from './contexts/SettingsContext';
+import { TeamProvider } from './contexts/TeamContext';
+import Landing from './pages/Landing';
+import Settings from './pages/Settings';
+import TeamCreate from './pages/TeamCreate';
+import Office from './pages/Office';
 
 function App() {
   return (
     <Router>
-      <div className="antialiased text-slate-900 dark:text-white bg-background-light dark:bg-background-dark min-h-screen font-display">
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/record" element={<Recorder />} />
-          <Route path="/patterns" element={<Patterns />} />
-          <Route path="/coach" element={<Coach />} />
-          <Route path="/onboarding" element={<Onboarding />} />
-        </Routes>
-      </div>
+      <SettingsProvider>
+        <TeamProvider>
+          <div className="antialiased bg-slate-950 min-h-screen font-sans">
+            <Routes>
+              <Route path="/" element={<Landing />} />
+              <Route path="/settings" element={<Settings />} />
+              <Route path="/team/:id" element={<TeamCreate />} />
+              <Route path="/office/:teamId" element={<Office />} />
+            </Routes>
+          </div>
+        </TeamProvider>
+      </SettingsProvider>
     </Router>
   );
 }
